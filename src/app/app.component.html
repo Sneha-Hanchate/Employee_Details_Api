@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <div>
+      <br />
+      <br />
+      <span routerLink="/"><mat-icon>home</mat-icon>Home</span><br /><br />
+      <span routerLink="/all-emp"><mat-icon>search</mat-icon>All Data</span
+      ><br /><br />
+      <span (click)="logout()"><mat-icon>email</mat-icon>Logout</span
+      ><br /><br />
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button (click)="sidenav.toggle()"><mat-icon> list</mat-icon></button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ item.id }}</mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      >Name: {{ item.name }}</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      Username:
+      {{ item.username }}
+    </p>
+    <p>
+      Email:
+      {{ item.email }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+    <button mat-raised-button color="primary" routerLink="/all-emp">
+      Back
+    </button>
+  </mat-card-actions>
+</mat-card>

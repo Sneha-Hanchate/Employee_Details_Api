@@ -1,0 +1,64 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2>LOGIN</h2>
+    </div>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+      <div class="email-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error
+            [ngClass]="{
+              'has-error': Submit && formControls.email.errors
+            }"
+          ></mat-error>
+          <mat-error
+            *ngIf="Submit && formControls.email.errors"
+            class="help-block"
+          >
+
+            <mat-error *ngIf="formControls.email.errors.required"
+              >Email is required</mat-error
+            >
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="password-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <mat-error
+            [ngClass]="{
+              'has-error': Submit && formControls.password.errors
+            }"
+          ></mat-error>
+
+          <mat-error
+            *ngIf="Submit && formControls.password.errors"
+            class="help-block"
+          >
+
+            <mat-error *ngIf="formControls.password.errors.required">
+              Password is required
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+        <button mat-flat-button color="primary">Login</button>
+
+    </form>
+  </mat-card-content>
+</mat-card>
